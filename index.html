@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose the Result's Sign</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="start-container">
+            <h1>Select the Practice Time</h1>
+            <label for="time-select">How many seconds do you want to practice?</label>
+            <input type="number" id="time-select" min="10" max="3600" value="60">
+            <button onclick="startPractice()">Start Practice</button>
+        </div>
+        <div id="practice-container" style="display: none;">
+            <div id="timer">Time Remaining: <span id="time-remaining">60</span> seconds</div>
+            <div id="problem-container">
+                <p id="problem"></p>
+            </div>
+            <div id="buttons">
+                <button onclick="checkAnswer('positive')">Positive</button>
+                <button onclick="checkAnswer('negative')">Negative</button>
+            </div>
+            <button id="back-to-start-btn" onclick="goToStart()">Back to Start</button>
+            <p id="result"></p>
+        </div>
+        <div id="summary" style="display: none;">
+            <h2>Practice Results</h2>
+            <p id="correct-count"></p>
+            <p id="incorrect-count"></p>
+            <p id="percentage"></p>
+            <button onclick="goToStart()">Back to Main Menu</button>
+        </div>
+
+        <!-- Sounds -->
+        <audio id="correct-sound" src="correct.wav"></audio>
+        <audio id="incorrect-sound" src="incorrect.wav"></audio>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
